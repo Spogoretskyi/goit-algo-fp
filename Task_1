@@ -141,8 +141,6 @@ class LinkedList:
                 current.insert_at_end(list2.head.data)
                 list2.head = list2.head.next
 
-            # current.head = current.head.next
-
         if list1.head is not None:
             current.insert_at_end(list1.head.data)
         elif list2.head is not None:
