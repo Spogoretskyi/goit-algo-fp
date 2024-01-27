@@ -13,6 +13,7 @@ class LinkedList:
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
+        self.is_sorted = False
 
     def insert_at_end(self, data):
         new_node = Node(data)
@@ -23,6 +24,7 @@ class LinkedList:
             while cur.next:
                 cur = cur.next
             cur.next = new_node
+        self.is_sorted = False
 
     def insert_after(self, prev_node: Node, data):
         if prev_node is None:
@@ -31,6 +33,7 @@ class LinkedList:
         new_node = Node(data)
         new_node.next = prev_node.next
         prev_node.next = new_node
+        self.is_sorted = False
 
     def delete_node(self, key: int):
         cur = self.head
