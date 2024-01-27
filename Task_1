@@ -152,41 +152,46 @@ class LinkedList:
         return current
 
 
-llist = LinkedList()
-llist.insert_at_end(11)
-llist.insert_at_end(99)
-llist.insert_at_end(7)
-llist.insert_at_end(12)
-llist.insert_at_end(34)
-llist.insert_at_end(9)
-llist.insert_at_end(1)
-llist.insert_at_end(101)
-llist.show_list()
+def main():
+    llist = LinkedList()
+    llist.insert_at_end(11)
+    llist.insert_at_end(99)
+    llist.insert_at_end(7)
+    llist.insert_at_end(12)
+    llist.insert_at_end(34)
+    llist.insert_at_end(9)
+    llist.insert_at_end(1)
+    llist.insert_at_end(101)
+    llist.show_list()
 
-llist.reverse_linked_list()
-print()
-llist.show_list()
-llist.insertion_sort_linked_list()
-print()
-llist.show_list()
-print()
+    llist.reverse_linked_list()
+    print()
+    llist.show_list()
+    llist.insertion_sort_linked_list()
+    print()
+    llist.show_list()
+    print()
 
-llist2 = LinkedList()
-llist2.insert_at_end(17)
-llist2.insert_at_end(999)
-llist2.insert_at_end(2)
-llist2.insert_at_end(68)
-llist2.insert_at_end(99)
-llist2.insert_at_end(79)
-llist2.insert_at_end(33)
-llist2.insertion_sort_linked_list()
+    llist2 = LinkedList()
+    llist2.insert_at_end(17)
+    llist2.insert_at_end(999)
+    llist2.insert_at_end(2)
+    llist2.insert_at_end(68)
+    llist2.insert_at_end(99)
+    llist2.insert_at_end(79)
+    llist2.insert_at_end(33)
+    llist2.insertion_sort_linked_list()
 
-merged_list = llist.merge_sorted_lists(llist2)
+    merged_list = llist.merge_sorted_lists(llist2)
 
-current = merged_list.head
-while current is not None:
-    print(
-        "(" + str(current.data) + ")",
-        end=" --> " if current.next is not None else "",
-    )
-    current = current.next
+    current = merged_list.head
+    while current is not None:
+        print(
+            "(" + str(current.data) + ")",
+            end=" --> " if current.next is not None else "",
+        )
+        current = current.next
+
+
+if __name__ == "__main__":
+    main()
