@@ -56,9 +56,8 @@ class Node:
                     queue.append(node.right)
 
     def generate_color(self, index):
-        # Генерувати колір на основі індексу змінюючи відтінок
-        base_color = (0.07, 0.588, 0.941)  # RGB кольор
-        shade = 0.03 * index
+        base_color = (0.07, 0.588, 0.941)
+        shade = 0.15 * index
         color = (
             max(0, base_color[0] - shade),
             max(0, base_color[1] - shade),
@@ -87,6 +86,7 @@ class Node:
             arrows=False,
             node_size=2500,
             node_color=colors,
+            cmap=plt.cm.Blues,
         )
         plt.show()
 
