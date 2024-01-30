@@ -56,8 +56,8 @@ class Node:
                     queue.append(node.right)
 
     def generate_color(self, index):
-        base_color = (0.07, 0.588, 0.941)
-        shade = 0.15 * index
+        base_color = (0.05, 0.588, 0.941)
+        shade = 0.07 * index
         color = (
             max(0, base_color[0] - shade),
             max(0, base_color[1] - shade),
@@ -86,6 +86,7 @@ class Node:
             arrows=False,
             node_size=2500,
             node_color=colors,
+            font_color="white",
             cmap=plt.cm.Blues,
         )
         plt.show()
@@ -93,11 +94,20 @@ class Node:
 
 def main():
     root = Node(0)
-    root.left = Node(4)
-    root.left.left = Node(5)
-    root.left.right = Node(10)
-    root.right = Node(1)
-    root.right.left = Node(3)
+    root.left = Node(1)
+    root.left.left = Node(3)
+    root.left.right = Node(4)
+    root.left.left.left = Node(7)
+    root.left.left.right = Node(8)
+    root.left.right.left = Node(9)
+    root.left.right.right = Node(10)
+    root.right = Node(2)
+    root.right.left = Node(5)
+    root.right.right = Node(6)
+    root.right.left.left = Node(11)
+    root.right.left.right = Node(12)
+    root.right.right.left = Node(13)
+    root.right.right.right = Node(14)
 
     # Відображення дерева з обходом у глибину
     root.draw_tree(traversal_type="depth")
